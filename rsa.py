@@ -102,11 +102,11 @@ class rsa:
         return d, e, n
 
     def encrypt(self, ke, i):
-        key, n = ke
-        cipher = pow(i, key, n)
+        e, n = ke
+        cipher = pow(i, e, n)
         return cipher
 
     def decrypt(self, kd, cipher):
-        key, n = kd
-        plain = pow(cipher, key, n)
+        d, n = kd
+        plain = pow(cipher, d, n)
         return plain
